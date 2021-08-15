@@ -29,11 +29,11 @@
         </item>
         <item>
         <title>借助github以及hugo搭建静态的个人博客-0</title>
-        <link>http://www.rmdarck18.xyz:1313/p/personal_blog/</link>
+        <link>http://www.rmdarck18.xyz:1313/p/%E5%80%9F%E5%8A%A9github%E4%BB%A5%E5%8F%8Ahugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-0/</link>
         <pubDate>Fri, 13 Aug 2021 20:38:35 +0800</pubDate>
         
-        <guid>http://www.rmdarck18.xyz:1313/p/personal_blog/</guid>
-        <description>&lt;img src="http://www.rmdarck18.xyz:1313/p/personal_blog/head.jpg" alt="Featured image of post 借助github以及hugo搭建静态的个人博客-0" /&gt;&lt;p&gt;此篇文章在于帮助对网络知识非常陌生的用户快速部署起一个轻量级的个人页面，但是因为这种事情多少涉及到一些技术层面的东西，很难说能够畅通无阻的就构建起自己的博客，只能说有问题多思考加邮件留言吧。。&lt;/p&gt;
+        <guid>http://www.rmdarck18.xyz:1313/p/%E5%80%9F%E5%8A%A9github%E4%BB%A5%E5%8F%8Ahugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-0/</guid>
+        <description>&lt;img src="http://www.rmdarck18.xyz:1313/p/%E5%80%9F%E5%8A%A9github%E4%BB%A5%E5%8F%8Ahugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-0/head.jpg" alt="Featured image of post 借助github以及hugo搭建静态的个人博客-0" /&gt;&lt;p&gt;此篇文章在于帮助对网络知识非常陌生的用户快速部署起一个轻量级的个人页面，但是因为这种事情多少涉及到一些技术层面的东西，很难说能够畅通无阻的就构建起自己的博客，只能说有问题多思考加留言吧。。&lt;/p&gt;
 &lt;p&gt;第一篇主要是讲一些环境准备和需要的软件。&lt;/p&gt;
 &lt;h2 id=&#34;环境准备&#34;&gt;环境准备&lt;/h2&gt;
 &lt;p&gt;在正式开始上手前，我们需要做一些环境准备，何谓“环境&amp;quot;？&lt;/p&gt;
@@ -41,14 +41,16 @@
 &lt;ol&gt;
 &lt;li&gt;git（必要，进行代码管理必不可少的工具）&lt;/li&gt;
 &lt;li&gt;Github（必要，这篇教程主要就是借助github代码托管实现个人博客）&lt;/li&gt;
+&lt;li&gt;Gitee码云 （Github的替位选择，推荐国内环境用户使用）&lt;/li&gt;
 &lt;li&gt;Shell（Windows平台推荐WindowsTerminal）、&lt;/li&gt;
 &lt;li&gt;MarkDown编辑器（MarkDown是一种标记语言，写文章会用到）&lt;/li&gt;
 &lt;li&gt;善于思考的大脑和愿意付出行动的双手&lt;/li&gt;
 &lt;/ol&gt;
 &lt;hr&gt;
+&lt;hr&gt;
 &lt;h3 id=&#34;git的安装&#34;&gt;Git的安装&lt;/h3&gt;
 &lt;h4 id=&#34;git简介&#34;&gt;Git简介&lt;/h4&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://pic2.zhimg.com/v2-c009d68e78c98159574cfa243d716b57_720w.jpg?source=172ae18b&#34; alt=&#34;&#34;  /&gt;&lt;/p&gt;
 &lt;p&gt;git是一个分布式版本控制软件，最初由林纳斯·托瓦兹创作，于2005年以GPL发布。最初目的是为更好地管理Linux内核开发而设计。应注意的是，这与GNU Interactive Tools不同。 git最初的开发动力来自于BitKeeper和Monotone。 &lt;a class=&#34;link&#34; href=&#34;https://zh.wikipedia.org/zh-cn/Git&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;维基百科&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;上面这堆谜语来自wiki，举例说明吧。&lt;/p&gt;
@@ -61,18 +63,57 @@
     &gt;&lt;img src=&#34;https://z3.ax1x.com/2021/08/13/fsQWBq.png&#34; alt=&#34;fsQWBq.png&#34;  /&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;根据自己系统选择，推荐选择Setup安装程序，下面的是便携版，涉及到环境变量注册表这些，不推荐萌新使用，下载下来后双击运行。保持默认选项一冲到底即可！当然，你也可以选择网络上查询相关资料再做决定。&lt;/p&gt;
 &lt;p&gt;安装完成过后你可以在任何一个地方鼠标右键看到这两个选项，这就代表安装完成了。&lt;/p&gt;
-&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://imgtu.com/i/fslNPU&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;&lt;img src=&#34;https://z3.ax1x.com/2021/08/13/fslNPU.png&#34; alt=&#34;fslNPU.png&#34;  /&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&#34;github账号&#34;&gt;Github账号&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;https://z3.ax1x.com/2021/08/13/fslNPU.png&#34; alt=&#34;&#34;  /&gt;&lt;/p&gt;
+&lt;p&gt;有关Git的上手使用可以参考我的另一篇文章！&lt;/p&gt;
+&lt;hr&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;github以及gitee账号&#34;&gt;Github以及Gitee账号&lt;/h3&gt;
 &lt;hr&gt;
 &lt;h4 id=&#34;github简介&#34;&gt;Github简介&lt;/h4&gt;
-&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.google.com/search?q=github&amp;amp;newwindow=1&amp;amp;sxsrf=ALeKk01RkvU7wDBr6bJIViufne3czGa_CA:1628860226351&amp;amp;tbm=isch&amp;amp;source=iu&amp;amp;ictx=1&amp;amp;fir=AX0L-dlfxlIUiM%2CbubBm5TnvXiH4M%2C%2Fm%2F0ryppmg&amp;amp;vet=1&amp;amp;usg=AI4_-kSdwc918DJbXthiOoZoJM3C5MuDpg&amp;amp;sa=X&amp;amp;ved=2ahUKEwiqnLiZia7yAhVCfd4KHYx1DRgQ_B16BAh0EAI#imgrc=AX0L-dlfxlIUiM&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;&lt;img src=&#34;http://www.rmdarck18.xyz:1313/data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N/AABEIAIAAbAMBEQACEQEDEQH/xAAcAAACAwADAQAAAAAAAAAAAAAABgUHCAIDBAH/xABOEAABAgMDBQoJBwkJAQAAAAABAgMABAUGBxESITFBcRMUFzI3UWF0ocEiVYGDkZKTwuJWYnKj0dLhFRYjM0JFRqSxJENEUmOClKKyCP/EABoBAQEAAwEBAAAAAAAAAAAAAAAFAQQGAwL/xAAuEQEAAQEECAYCAwEAAAAAAAAAAQMCBAUREhUxQUKBocEhIlFS4fBikRMy0RT/2gAMAwEAAhEDEQA/AJGytmzaEzQE3vfcMn&amp;#43;7ysrHHpHNHSXu9/8APl4Z5uVudz/6dLxyyMHBsfG38v8AFGlrWfZ1b&amp;#43;po9/T5HBsfGp9h8UNaz7OpqaPf0&amp;#43;RwbHxt9R8UNa/h1NTR7&amp;#43;nyODY&amp;#43;Nj7D4oa1/Dqamj39PkcGx8bH2HxQ1r&amp;#43;HU1NHv6fI4Nj42PsPihrX8OpqaPf0&amp;#43;RwbHxsfYfFDWv4dTU0e/p8jg2PjX6j4ozrafZ1Y1NHv6fI4Nz41&amp;#43;o&amp;#43;KGtp9nVnU0e/p8jg3Pjb6j4oxrWfZ1NTR7&amp;#43;nyODY&amp;#43;NT7D4oa1n2dTU0e/p8virtyEk/lX&amp;#43;X&amp;#43;KM62/DqxODfn0&amp;#43;SFrO2LCGfrquNU/Ne9EfFeDn2XMG4&amp;#43;XdU94NuLUU62tZk5KuTjMuzNKS22leZI5hEdcL3CLbH5Qz3r/AIQBwi2x&amp;#43;UM96/4QBwi2x&amp;#43;UM96/4QBwi2x&amp;#43;UM96/4QBwjWx&amp;#43;UM964&amp;#43;yA5C8i2Q/iGc9I&amp;#43;yA&amp;#43;i8q2Y/iCb/6/ZAchebbQfxBNeqj7IDmL0bbD9/v&amp;#43;zb&amp;#43;7AfRepbcfv932LX3YC9roK3UrQWLE/WJpUzNGYcRuhSlOYYYDAACBKvDpO0x18bHEbz7dVxqn5r3okYrwc&amp;#43;y3g3Hy7qFvQ5Qa91tUR1wrwBAStBs3WLQqmE0WRcm1S6N0dSgjFKdAzE59gzwEc8y6w6tp9tTbrailaFpIUkjSCDoMB1wBAEBMJsvXDQna7&amp;#43;TH00tvDKmVDJSQSACMc6hiRnGIgIeAIDS9wXJ2Otvd0CSadJ2mOvjY4jefbquNU/Ne9EjFeDn2W8G4&amp;#43;XdQt6HKDXutqiOuFeAIC9f/AJp3He9eAw3fLZyufJwXh24wDjeNdpI2zdl5pDqZGeQoJdmEt5Rdb5iM2JGowEZJ3G2UYbwmHKhMr1qU8E9iQIDvcuTscpJCWp1B50zJzekQEdTLjaPI2hYnHZ12cprQyjKTCRitY0ZShgCnnGGrWIByvJDLd39eS4EpbEisJGgA4eD24QGRIAgNL3BcnY6293QJJus7THXxscRvPt1XGqfmveiRivBz7LeDcfLuoW9DlBr3W1RHXCvAEBpK4iyaKNZxNafyjO1RAUBjmQzj4Iw1k8bHpA58QtCAIAgCAirUUKVtLQpukTxWGJlGBUhWBSQQUkbCAcOiAx/Wac9SKtN06aw3aVeU0vAZiQcMR0GA8UBpe4Lk7HW3u6BJN1naY6&amp;#43;NjiN59uq41T8170SMV4OfZbwbj5d1C3ocoNe62qI64V4AgNp2fl0SlBpss2MEMyjTaRzAJAgPfAEAQBAEBla&amp;#43;uXEveRVcMMHdycw2tpx7RAI0Bpe4Lk7HW3u6BJN1naY6&amp;#43;NjiN59uq41T8170SMV4OfZbwbj5d1C3ocoNe62qI64V4AgNo2cnGqhQKbOMHFt&amp;#43;VbcT5UgwEjAEAQBAEBlW&amp;#43;mcROXjVUt4FLO5s4g6SlAx7cR5IBHgNL3BcnY6293QJJus7THXxscRvPt1XGqfmveiRivBz7LeDcfLuoW9DlBr3W1RHXCvAEBd9x94UtLSrdma2&amp;#43;lnIUd4vuKwScT&amp;#43;rJOjOc23DUMQvLHNAfYAgCAT7xbdyFjaUtSlodqbqSJaVBzk/5lcyR26IDKUzMOzcy7MzLhceeWXHFq0qUTiSfLAdUBpe4Lk7HW3u6BJN1naY6&amp;#43;NjiN58uq41T8170SMV4OfZbwbj5d1DXocoNe62qI64V4C0LqKpZyqKbsraij09wTGKZWc3IIdyyeIpYz4nHMdOOaAX7zLFPWMrymEZblOfGXKPK1jWlXzh/TA64DlZu861VnmksS0/vmWSMEsTad0SkdB4w2AwGnLMTVQnrPyE3Vm2Wpx9lLrjbIISjKGIGcnURASkBny8W862NLtBUaGh2UkhLO5KXZZnw1IIBScVE4EpI0c8BU03NzE7MuTM4&amp;#43;4&amp;#43;&amp;#43;4cVuuqKlKPSTAdMAQGl7guTsdbe7oEk3Wdpjr42OI3ny6rjVTzXvRIxXg59lvBuPl3UNehyg17raojrhXgObS1tOJcaWpDiCFJUk4FJGggwGnrH1&amp;#43;hXm2XRJVhqXfnEIAm5VzMQsZt0RrAOnEaMcIDzi5Gx&amp;#43;77oUz5RjjuW&amp;#43;PB/pj2wFjoQG0JQkYJSMAOiA5QGYb&amp;#43;kpTeLNEAAql2Sek5OHdAV3AEAQGl7guTsdbe7oEk3Wdpjr42OI3n26rjVPzXvRIxXg59lvBuPl3ULehyg17raojrhXgCA7ZeYelnkPSzq2nUHFDjailSTzgjRAMH5/wBrt77h&amp;#43;cdSyMMMd3OV62ntgNcsfqG8TickadkB2QGYr&amp;#43;&amp;#43;USY6sz/5gK6gCAIDS9wXJ2Otvd0CSbrO0x18bHEbz5dWRlVMa8G/eiRi3Bz7LeDcfLuqm9&amp;#43;xFek7RVOu7zL9NmXi7uzHh7kPnjSnRp0dMR1xWkAQBAEA7JvatylISmuEADADerP3ID7wt268en/iMfcgFmvVyo2hqKqhWJjfE0pISV5CU5hozJAEBHQBAeylUuerE6iTpco9NTK9DbSco7TzDpOaA1FdXZ2fstY1un1XckzJcW8pLa8oICsMxOjHZm6YMTsVrrO2OvjY4nef6pYqbp7&amp;#43;/bNzTiVpzhkrwUNitewxGpYhYqRoXiOa5Ww23SnTu1rk5Um3Dku8ZK0cqtp1OZTqUEEfST3j0Rirh0Wo06E5x6M0cUmza0LxZyn1R9q7q7OWsZVUKG41ITbmcOywBZcPzkDQekYHbEy1ZtWZytRlKxYt2bcaVmc4UZayxVdsm/k1eTKWSrBEy14TS9itR6DgY&amp;#43;X0XYAgCAIAgOxhlyYdQyw2tx1ZyUIQkqUo8wA0wFr2JuUqVQyJq07iqfLHAiWRgXljp1I7T0CAtVExZiwkkZGlSzTbmtlgYuLPOtR7zG1QudWv4x4R6tO836lQ8JnOfSEOXbR2yVg0nelOJ0gkII26V&amp;#43;TNsiho3W5bfNa&amp;#43;/pL0r3fp8PLZ&amp;#43;/tPSdgaO1LpTM7rMO/tLyyn0ARq28SrzOceDdsYTd4s5Ws5k2RPU0fVqNIVdnc56XS5hxV6FJ2HVHrSr1KM52JeNa7068ZW4JM1Zqt2beVN2fmXH2dKmwPCI&amp;#43;cnQraM8VLN7oXmNGvGU/d6PbuV4us6d3nOPT7te&amp;#43;mWyptVYVIWglm2t0GQ4l1OUyvnCgdGw5umNevh1ux5qfjHX5bF2xSxb8tXyz0&amp;#43;CpbK5On1FK52yb6ZN5Qyt7OEqZX9E5yntGyJyrE5qRr1Bqlnp0ydZk3ZV4aAsZljnSdBGyDKNgCAsOxN0ldtHuczPJNMp6sDur6P0ix81HecBtgLnpFBsjdzKhbDaRNqTgX3P0kw7z4cw6BgI9qNCpWnKxDwr3mlQjO3LwTFoK9ad5UrQmFy8voUsHA4fOXq2DPtinZut3usaVac5SLV7vN7nQoRlH3f/AImKFYWSkyl&amp;#43;pETkxpySP0YOz9ry&amp;#43;iNaviFS35bHlhtXfC6dOdKp5p6G5KQkAAAAZgBE9UfYAgCAMICErtmKbWgpT7W5zGp9rMry8/ljZoXurQ/rPh6NS83KjeP7R4&amp;#43;pQVK2kscsrlnN908HFQAJRh0p0o2jNFHTut8/t5bX39pX8d7uM52fNZ&amp;#43;/pMMVmztsZH8nVmVZKl/4eZAIJ50K5/QY0rxcatHx2x92qN2xGlX8Nk/divrS3EKXOpcszUW25Za/DYnMSWhrKVAeFsIB6TGk3zdZi7uy1hpdM/UFom51Gffc0BglX&amp;#43;mjV2npj7sU7VSdGzGcvOpVsUrOlbnKHZUbZz9TmDJWalXMo5t1KcVkc4GhI6T2RUp3CnSjTvFrl928kepiNWra/ju9nnv&amp;#43;Obvo9hVOu78tBMKfeVnLSVk4/SVpOwemPmtiOUaFCMo9fh90MLm1OneJzn0/2TrLS7MqylmXaQ00keChCcAIl2rU2pztTnKvZsWbEaNmModsYfQgCAIAgCAID5gOaAWK/Yqn1PKdlgJSYOfKQnwFHpT3jCN673&amp;#43;rS8J8YTrzhtKt42fCS4J21dmP7G40ZppfgMKKS6MdWSRn/wBpjd/jud688TlO/c0P5L7dPJMaUbt/3m9EhZGqVp8TtpJpxAOhvEFeHNzJGzsj4t36lRjQu8c/u16U8PrV7WneLXL7sO9NpknTGNwkZdDSNeAznpJ0mJdSrbqzpW5zlXpUadGzo2Iyh7I83qIAgCAID/Z&#34; alt=&#34;img&#34;  /&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;GitHub是通过Git进行版本控制的软件源代码托管服务平台，由GitHub公司的开发者Chris Wanstrath、P. J. Hyett和汤姆·普雷斯顿·沃纳使用Ruby on Rails编写而成。 GitHub同时提供付费账户和免费账户。这两种账户都可以创建公开或私有的代码仓库，但付费用户支持更多功能。 &lt;a class=&#34;link&#34; href=&#34;https://zh.wikipedia.org/zh-cn/GitHub&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;维基百科&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;wiki对于完全没有基础的人确实有点麻哦，还是举例说明吧。&lt;/p&gt;
 &lt;p&gt;比如你是一个画家，你非常喜欢在网络上分享自己的绘画作品，有一天你突然萌生了一个奇妙的想法，假如我可以发布我作品的源文件，让大家一起来完成作品会怎么样？于是你发布了作品的psd或者是其它可以编辑的文件到一个网络上的仓库中，并且告诉所有人可以随意编辑你这个仓库里的作品。现在，其他人就可以下载你的作品，在他们的电脑上完成了工作后再发布到你的作品仓库里，或者单纯下载下来欣赏使用，这是开源的体现。&lt;/p&gt;
 &lt;p&gt;网络上建立仓库（存储空间）是需要消耗资源的，github提供给了用户一定的免费资源，大量用户之间则构建起了一个交流的社区，然后把这个例子中的绘画作品换成代码就可以简单理解github以及开源社区是什么了。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h4 id=&#34;注册gitee账号&#34;&gt;注册gitee账号&lt;/h4&gt;
+&lt;p&gt;国内网络环境比较推荐gitee，方便且速度快，中文环境便于学习使用。缺点就是考虑到国内政治因素以及各类安全需求有比较多的限制，也需要实名认证，当然这其实无可厚非，看各位如何取舍吧。&lt;/p&gt;
+&lt;p&gt;访问&lt;a class=&#34;link&#34; href=&#34;https://gitee.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;码云&lt;/a&gt;注册&lt;figure style=&#34;flex-grow: 140; flex-basis: 337px&#34;&gt;
+		&lt;a href=&#34;http://www.rmdarck18.xyz:1313/p/%E5%80%9F%E5%8A%A9github%E4%BB%A5%E5%8F%8Ahugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-0/image-20210816000803822.png&#34; data-size=&#34;998x710&#34;&gt;&lt;img src=&#34;http://www.rmdarck18.xyz:1313/p/%E5%80%9F%E5%8A%A9github%E4%BB%A5%E5%8F%8Ahugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-0/image-20210816000803822.png&#34;
+				srcset=&#34;http://www.rmdarck18.xyz:1313/p/%E5%80%9F%E5%8A%A9github%E4%BB%A5%E5%8F%8Ahugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-0/image-20210816000803822_hufc7cc0ea94da41d32bc42756d8b528f0_167326_480x0_resize_box_3.png 480w, http://www.rmdarck18.xyz:1313/p/%E5%80%9F%E5%8A%A9github%E4%BB%A5%E5%8F%8Ahugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-0/image-20210816000803822_hufc7cc0ea94da41d32bc42756d8b528f0_167326_1024x0_resize_box_3.png 1024w&#34;
+				width=&#34;998&#34;
+				height=&#34;710&#34;
+				loading=&#34;lazy&#34;
+				&gt;
+		&lt;/a&gt;
+		
+	&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;请仔细阅读gitee给出的说明哦，个人空间取个好点的名字。注册完后登陆，然后按照网页的提示把手机号码绑定，还有实名认证，请准备好身份证的正反面各一张，还有一张手持身份证的照片（电脑上推荐大家平时就准备好这些证件照放在一个文件夹里，便于取用，在手机上访问网页的话也许可以直接拍照上传），实名认证需要大约1-2个工作日完成，完成过后才能启用gitee的页面托管服务。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h4 id=&#34;创建gitee仓库&#34;&gt;创建Gitee仓库&lt;/h4&gt;
+&lt;p&gt;登录到你的个人首页，点击左下角的加号按钮&lt;/p&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 177; flex-basis: 426px&#34;&gt;
+		&lt;a href=&#34;http://www.rmdarck18.xyz:1313/p/%E5%80%9F%E5%8A%A9github%E4%BB%A5%E5%8F%8Ahugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-0/image-20210816001713660.png&#34; data-size=&#34;1288x725&#34;&gt;&lt;img src=&#34;http://www.rmdarck18.xyz:1313/p/%E5%80%9F%E5%8A%A9github%E4%BB%A5%E5%8F%8Ahugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-0/image-20210816001713660.png&#34;
+				srcset=&#34;http://www.rmdarck18.xyz:1313/p/%E5%80%9F%E5%8A%A9github%E4%BB%A5%E5%8F%8Ahugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-0/image-20210816001713660_hu17aa59f46fc79e9ff850bb5d81cb9a70_163857_480x0_resize_box_3.png 480w, http://www.rmdarck18.xyz:1313/p/%E5%80%9F%E5%8A%A9github%E4%BB%A5%E5%8F%8Ahugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-0/image-20210816001713660_hu17aa59f46fc79e9ff850bb5d81cb9a70_163857_1024x0_resize_box_3.png 1024w&#34;
+				width=&#34;1288&#34;
+				height=&#34;725&#34;
+				loading=&#34;lazy&#34;
+				&gt;
+		&lt;/a&gt;
+		
+	&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 127; flex-basis: 305px&#34;&gt;
+		&lt;a href=&#34;http://www.rmdarck18.xyz:1313/p/%E5%80%9F%E5%8A%A9github%E4%BB%A5%E5%8F%8Ahugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-0/image-20210816002329592.png&#34; data-size=&#34;909x715&#34;&gt;&lt;img src=&#34;http://www.rmdarck18.xyz:1313/p/%E5%80%9F%E5%8A%A9github%E4%BB%A5%E5%8F%8Ahugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-0/image-20210816002329592.png&#34;
+				srcset=&#34;http://www.rmdarck18.xyz:1313/p/%E5%80%9F%E5%8A%A9github%E4%BB%A5%E5%8F%8Ahugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-0/image-20210816002329592_huf539beca69c2aba631a11ca5a4ac3ddb_47414_480x0_resize_box_3.png 480w, http://www.rmdarck18.xyz:1313/p/%E5%80%9F%E5%8A%A9github%E4%BB%A5%E5%8F%8Ahugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-0/image-20210816002329592_huf539beca69c2aba631a11ca5a4ac3ddb_47414_1024x0_resize_box_3.png 1024w&#34;
+				width=&#34;909&#34;
+				height=&#34;715&#34;
+				loading=&#34;lazy&#34;
+				&gt;
+		&lt;/a&gt;
+		
+	&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;这个仓库名最好和你注册时填写的个人空间名一样哦，这样的话你就可以直接通过这种形式http://darcklh.gitee.io/的域名访问你的个人博客，否则好像是还要加上一个2级域名，其它的保持默认选项即可，后面有变化也可以修改。注意到右上角的导入了吗，gitee可以直接同步github的仓库，要善于利用哦！&lt;/p&gt;
 &lt;hr&gt;
 &lt;h4 id=&#34;注册github账号&#34;&gt;注册github账号&lt;/h4&gt;
 &lt;p&gt;访问这个链接github.com，来到github官网，找到右上角的Sign up按钮。&lt;/p&gt;
@@ -81,7 +122,7 @@
 &lt;p&gt;完成注册后来到个人的首页。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://z3.ax1x.com/2021/08/13/fseY11.png&#34; alt=&#34;&#34;  /&gt;&lt;/p&gt;
 &lt;hr&gt;
-&lt;h4 id=&#34;仓库说明&#34;&gt;仓库说明&lt;/h4&gt;
+&lt;h4 id=&#34;创建github仓库&#34;&gt;创建Github仓库&lt;/h4&gt;
 &lt;p&gt;有了账号还需要仓库来存放你的博客，创建仓库也是非常简单的，但是注意个人博客类的仓库命名需要一定规范，这就是唯一需要注意的地方了。点击那个Repositories按钮，然后New&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://z3.ax1x.com/2021/08/13/fs3e1g.md.png&#34; alt=&#34;fs3e1g.md.png&#34;  /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://imgtu.com/i/fs3au9&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -112,6 +153,67 @@
 &lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://imgtu.com/i/fstz1f&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;&lt;img src=&#34;https://z3.ax1x.com/2021/08/13/fstz1f.md.png&#34; alt=&#34;fstz1f.md.png&#34;  /&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;也可以通过点击右键菜单里的WindowsTerminal选项在右键所点击的目录打开Shell&lt;/p&gt;
+&lt;hr&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;markdown编辑器的准备&#34;&gt;MarkDown编辑器的准备&lt;/h3&gt;
+&lt;h4 id=&#34;markdown的介绍&#34;&gt;MarkDown的介绍&lt;/h4&gt;
+&lt;p&gt;在解释MarkDown之前我们需要先了解一下HTML是什么，了解互联网技术的可以跳过，这部分给初次接触的各位介绍一下。&lt;/p&gt;
+&lt;p&gt;HTML（Hyper Text Markup Language），中文叫超文本标记语言，各位回想一下平时上网浏览各类网页的时候，包括这篇文章，上面是如何展示出来各式各样的内容的，有字体样式不同的文本，有各种图片穿插其中，甚至还有一些视频和动态内容。这就是所谓的”超文本”，可以理解成加强型文本，已经不是简单的文本形式了，里面还添加了其它的多媒体元素。&lt;/p&gt;
+&lt;p&gt;如何在一篇文本中添加那些元素呢？我们可以通过标记的形式，比如说以一些特定的文本串标定某一段的字体大小，颜色，或者标定某一段文本串代表一张图片。这就是所谓的“标记语言”。&lt;/p&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 396; flex-basis: 951px&#34;&gt;
+		&lt;a href=&#34;http://www.rmdarck18.xyz:1313/p/%E5%80%9F%E5%8A%A9github%E4%BB%A5%E5%8F%8Ahugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-0/image-20210816005622212.png&#34; data-size=&#34;1268x320&#34;&gt;&lt;img src=&#34;http://www.rmdarck18.xyz:1313/p/%E5%80%9F%E5%8A%A9github%E4%BB%A5%E5%8F%8Ahugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-0/image-20210816005622212.png&#34;
+				srcset=&#34;http://www.rmdarck18.xyz:1313/p/%E5%80%9F%E5%8A%A9github%E4%BB%A5%E5%8F%8Ahugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-0/image-20210816005622212_hu0101a654944f11c781dcfbbaf5a5c96c_157887_480x0_resize_box_3.png 480w, http://www.rmdarck18.xyz:1313/p/%E5%80%9F%E5%8A%A9github%E4%BB%A5%E5%8F%8Ahugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-0/image-20210816005622212_hu0101a654944f11c781dcfbbaf5a5c96c_157887_1024x0_resize_box_3.png 1024w&#34;
+				width=&#34;1268&#34;
+				height=&#34;320&#34;
+				loading=&#34;lazy&#34;
+				alt=&#34;左边是浏览器画面 右边是超文本标记语言 h3代表三级标题&#34;&gt;
+		&lt;/a&gt;
+		
+		&lt;figcaption&gt;左边是浏览器画面 右边是超文本标记语言 h3代表三级标题&lt;/figcaption&gt;
+		
+	&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;好，现在我们知道了HTML是什么，那只要再去了解一下标记语言的语法就可以写出漂亮的文章了是吧，非也！现在有个问题，我们新建一个文本文件，就是那个文件后缀是TXT的东西，在里面写上这些东西，然后保存。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;h1&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;style&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;color: red&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;Hello HTML!&lt;span class=&#34;p&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;h1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;p&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;上面的内容是不是变红了？&lt;span class=&#34;p&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;p&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;诶？没变化是吧，聪明的各位也许想到了，只要把这个文件拖到浏览器里就能够打开并且看到效果！其实文件的后缀名对文件除了文件信息以外的内容没有什么影响，后缀名会影响系统选择以什么程序来打开这个文件。也就是说，以HTML作为后缀名的文件，系统会让你安装的并且设为默认浏览器的程序来加载它，浏览器处理文件二进制流并且将它渲染成大家所熟知的页面形式。&lt;/p&gt;
+&lt;p&gt;也就是说，标记语言除了本身编写的时候需要符合一定规则以外，还需要专门的程序来解析显示它。&lt;/p&gt;
+&lt;p&gt;好，话该说回来了，MarkDown也是一种标记语言，它的文件后缀名是md，它虽然没有HTML那么多强大的功能，不过比起原生的文本形式强大太多，而且主要是用来写文章的，相比于HTML更加优雅，不管是平时写笔记还是什么的都非常推荐使用！&lt;/p&gt;
+&lt;h4 id=&#34;下载安装typora&#34;&gt;下载安装Typora&lt;/h4&gt;
+&lt;p&gt;Typora是一款用来解析MarkDown语言的软件，网络上有非常多的软件可以选择，各位可以自行搜索下载，不过我试了Typora之后感觉是爱不释手啊！软件功能足够方便，界面非常漂亮干净，软件和官网都透露着一种性冷淡的文艺的气息。&lt;a class=&#34;link&#34; href=&#34;https://typora.io/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Typora官网&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 176; flex-basis: 424px&#34;&gt;
+		&lt;a href=&#34;http://www.rmdarck18.xyz:1313/p/%E5%80%9F%E5%8A%A9github%E4%BB%A5%E5%8F%8Ahugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-0/image-20210816013535620.png&#34; data-size=&#34;1366x773&#34;&gt;&lt;img src=&#34;http://www.rmdarck18.xyz:1313/p/%E5%80%9F%E5%8A%A9github%E4%BB%A5%E5%8F%8Ahugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-0/image-20210816013535620.png&#34;
+				srcset=&#34;http://www.rmdarck18.xyz:1313/p/%E5%80%9F%E5%8A%A9github%E4%BB%A5%E5%8F%8Ahugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-0/image-20210816013535620_hu5836069c3414dd4601e932af5a0c6c08_38122_480x0_resize_box_3.png 480w, http://www.rmdarck18.xyz:1313/p/%E5%80%9F%E5%8A%A9github%E4%BB%A5%E5%8F%8Ahugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-0/image-20210816013535620_hu5836069c3414dd4601e932af5a0c6c08_38122_1024x0_resize_box_3.png 1024w&#34;
+				width=&#34;1366&#34;
+				height=&#34;773&#34;
+				loading=&#34;lazy&#34;
+				alt=&#34;官网下载页&#34;&gt;
+		&lt;/a&gt;
+		
+		&lt;figcaption&gt;官网下载页&lt;/figcaption&gt;
+		
+	&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;打开官网来到页面底部，或者点击右上角的Download跳过来，选择自己的系统（Windows），然后在下一个页面选择64位或者是32位下载，之后就是运行安装程序即可啦！&lt;/p&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 110; flex-basis: 264px&#34;&gt;
+		&lt;a href=&#34;http://www.rmdarck18.xyz:1313/p/%E5%80%9F%E5%8A%A9github%E4%BB%A5%E5%8F%8Ahugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-0/image-20210816013031895.png&#34; data-size=&#34;1130x1025&#34;&gt;&lt;img src=&#34;http://www.rmdarck18.xyz:1313/p/%E5%80%9F%E5%8A%A9github%E4%BB%A5%E5%8F%8Ahugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-0/image-20210816013031895.png&#34;
+				srcset=&#34;http://www.rmdarck18.xyz:1313/p/%E5%80%9F%E5%8A%A9github%E4%BB%A5%E5%8F%8Ahugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-0/image-20210816013031895_hued6e94ae4f9f0e0fed7e15ef0d51e1c2_267894_480x0_resize_box_3.png 480w, http://www.rmdarck18.xyz:1313/p/%E5%80%9F%E5%8A%A9github%E4%BB%A5%E5%8F%8Ahugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-0/image-20210816013031895_hued6e94ae4f9f0e0fed7e15ef0d51e1c2_267894_1024x0_resize_box_3.png 1024w&#34;
+				width=&#34;1130&#34;
+				height=&#34;1025&#34;
+				loading=&#34;lazy&#34;
+				alt=&#34;Typora写作中&#34;&gt;
+		&lt;/a&gt;
+		
+		&lt;figcaption&gt;Typora写作中&lt;/figcaption&gt;
+		
+	&lt;/figure&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;总结&#34;&gt;总结&lt;/h2&gt;
+&lt;p&gt;第一篇的内容其实很简单，跟着走就完事了，写的可能有点啰里啰嗦的。&lt;/p&gt;
+&lt;p&gt;因为我自己是从一点都不懂的程度慢慢学过来的，所以我非常理解想要接触这个领域的萌新入门时会遇到很多特别基础的问题，但是由于知识体系是零散的，萌新很难自己构建起来一套理解网络基础的体系，来解决这些基础的问题。&lt;/p&gt;
+&lt;p&gt;所以我花大量篇幅尽量介绍清楚整个体系是怎么一回事，一方面是我自己加强理解和复习，另外一方面就是帮助各位萌新从这个搭建博客的流程中窥探学习到网络技术的一些基础知识。&lt;/p&gt;
+&lt;p&gt;如果说整个流程都只是叙述做什么，怎么做，却没有说明为什么，那其实这系列文章就是我自己写出来爽罢了，没啥实际意义。&lt;/p&gt;
+&lt;p&gt;要是能帮到各位就太好了！&lt;/p&gt;
 </description>
         </item>
         <item>
@@ -120,7 +222,8 @@
         <pubDate>Fri, 13 Aug 2021 20:38:35 +0800</pubDate>
         
         <guid>http://www.rmdarck18.xyz:1313/p/%E5%80%9F%E5%8A%A9github%E4%BB%A5%E5%8F%8Ahugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-1/</guid>
-        <description>&lt;img src="http://www.rmdarck18.xyz:1313/p/%E5%80%9F%E5%8A%A9github%E4%BB%A5%E5%8F%8Ahugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-1/img1.png" alt="Featured image of post 借助github以及hugo搭建静态的个人博客-1" /&gt;&lt;p&gt;还没写哦&lt;/p&gt;</description>
+        <description>&lt;img src="http://www.rmdarck18.xyz:1313/p/%E5%80%9F%E5%8A%A9github%E4%BB%A5%E5%8F%8Ahugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-1/img1.png" alt="Featured image of post 借助github以及hugo搭建静态的个人博客-1" /&gt;&lt;p&gt;还没写哦&lt;/p&gt;
+&lt;p&gt;AAAAAAAAAAAAAA&lt;/p&gt;</description>
         </item>
         <item>
         <title>Study</title>

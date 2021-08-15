@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='此篇文章在于帮助对网络知识非常陌生的用户快速部署起一个轻量级的个人页面，但是因为这种事情多少涉及到一些技术层面的东西，很难说能够畅通无阻的就构建起自己的博客，只能说有问题多思考加留言吧。。
+第一篇主要是讲一些环境准备和需要的软件。
+环境准备 在正式开始上手前，我们需要做一些环境准备，何谓“环境&amp;quot;？
+程序其实就像一种生物，鱼需要水，植物需要阳光，绝大部分动物都需要氧气，除了必备的生存条件之外还可以准备一些辅助的条件让生物更加满足，这些都可以称之为环境。这一部分主要是介绍搭建博客必要的环境，请准备好网络环境以及电脑。
+ git（必要，进行代码管理必不可少的工具） Github（必要，这篇教程主要就是借助github代码托管实现个人博客） Gitee码云 （Github的替位选择，推荐国内环境用户使用） Shell（Windows平台推荐WindowsTerminal）、 MarkDown编辑器（MarkDown是一种标记语言，写文章会用到） 善于思考的大脑和愿意付出行动的双手    Git的安装 Git简介 git是一个分布式版本控制软件，最初由林纳斯·托瓦兹创作，于2005年以GPL发布。最初目的是为更好地管理Linux内核开发而设计。应注意的是，这与GNU Interactive Tools不同。 git最初的开发动力来自于BitKeeper和Monotone。 维基百科
+上面这堆谜语来自wiki，举例说明吧。
+好比你装一台电脑，整个过程存在非常多的状态，甚至装完之后还需要升级维护之类的需求。如果中间出了问题就要拆掉已经装好的部分回到出错的状态重新来过，非常折磨！现在出现了这么一个工具，它可以记录下一个时空节点的所有信息，比如在你装好CPU，装好内存，装好显卡的每个结束时刻你都可以记录下这一时空节点，还可以带上一些你的辅助信息，说明为啥要记录这个节点以及在这个节点你都做了些什么。这样当你出现了什么问题的时候你可以快速的检查到底出啥问题了，甚至返回到之前的时空节点将其修复！是不是非常酷炫？这还不是最酷的，结合下文会讲到的Github，甚至可以做到让别人克隆你的时空节点记录，将他的时空记录和你的合并起来！真是令人激动。当然，Git的进一步使用就需要各位深入学习了，此处只是为了方便大家理解后面的命令都在做什么。
+Git的下载和安装 官网地址
+
+根据自己系统选择，推荐选择Setup安装程序，下面的是便携版，涉及到环境变量注册表这些，不推荐萌新使用，下载下来后双击运行。保持默认选项一冲到底即可！当然，你也可以选择网络上查询相关资料再做决定。
+安装完成过后你可以在任何一个地方鼠标右键看到这两个选项，这就代表安装完成了。
+有关Git的上手使用可以参考我的另一篇文章！
+  Github以及Gitee账号  Github简介 GitHub是通过Git进行版本控制的软件源代码托管服务平台，由GitHub公司的开发者Chris Wanstrath、P. J. Hyett和汤姆·普雷斯顿·沃纳使用Ruby on Rails编写而成。 GitHub同时提供付费账户和免费账户。这两种账户都可以创建公开或私有的代码仓库，但付费用户支持更多功能。 维基百科
+wiki对于完全没有基础的人确实有点麻哦，还是举例说明吧。
+比如你是一个画家，你非常喜欢在网络上分享自己的绘画作品，有一天你突然萌生了一个奇妙的想法，假如我可以发布我作品的源文件，让大家一起来完成作品会怎么样？于是你发布了作品的psd或者是其它可以编辑的文件到一个网络上的仓库中，并且告诉所有人可以随意编辑你这个仓库里的作品。现在，其他人就可以下载你的作品，在他们的电脑上完成了工作后再发布到你的作品仓库里，或者单纯下载下来欣赏使用，这是开源的体现。
+网络上建立仓库（存储空间）是需要消耗资源的，github提供给了用户一定的免费资源，大量用户之间则构建起了一个交流的社区，然后把这个例子中的绘画作品换成代码就可以简单理解github以及开源社区是什么了。
+ 注册gitee账号 国内网络环境比较推荐gitee，方便且速度快，中文环境便于学习使用。缺点就是考虑到国内政治因素以及各类安全需求有比较多的限制，也需要实名认证，当然这其实无可厚非，看各位如何取舍吧。
+访问码云注册
+请仔细阅读gitee给出的说明哦，个人空间取个好点的名字。注册完后登陆，然后按照网页的提示把手机号码绑定，还有实名认证，请准备好身份证的正反面各一张，还有一张手持身份证的照片（电脑上推荐大家平时就准备好这些证件照放在一个文件夹里，便于取用，在手机上访问网页的话也许可以直接拍照上传），实名认证需要大约1-2个工作日完成，完成过后才能启用gitee的页面托管服务。
+ 创建Gitee仓库 登录到你的个人首页，点击左下角的加号按钮
+
+
+这个仓库名最好和你注册时填写的个人空间名一样哦，这样的话你就可以直接通过这种形式http://darcklh.gitee.io/的域名访问你的个人博客，否则好像是还要加上一个2级域名，其它的保持默认选项即可，后面有变化也可以修改。注意到右上角的导入了吗，gitee可以直接同步github的仓库，要善于利用哦！
+ 注册github账号 访问这个链接github.com，来到github官网，找到右上角的Sign up按钮。
+接下来就是github的注册信息界面了，做的很漂亮，如果网络条件不好的话请多等待一下，或者挂上梯子再试试。这部分不予赘述，就是一个注册流程，也没啥限制的。
+完成注册后来到个人的首页。
+ 创建Github仓库 有了账号还需要仓库来存放你的博客，创建仓库也是非常简单的，但是注意个人博客类的仓库命名需要一定规范，这就是唯一需要注意的地方了。点击那个Repositories按钮，然后New'><title>借助github以及hugo搭建静态的个人博客-0</title>
+
+<link rel='canonical' href='http://www.rmdarck18.xyz:1313/p/%E5%80%9F%E5%8A%A9github%E4%BB%A5%E5%8F%8Ahugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-0/'>
+
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='借助github以及hugo搭建静态的个人博客-0'>
+<meta property='og:description' content='此篇文章在于帮助对网络知识非常陌生的用户快速部署起一个轻量级的个人页面，但是因为这种事情多少涉及到一些技术层面的东西，很难说能够畅通无阻的就构建起自己的博客，只能说有问题多思考加留言吧。。
+第一篇主要是讲一些环境准备和需要的软件。
+环境准备 在正式开始上手前，我们需要做一些环境准备，何谓“环境&amp;quot;？
+程序其实就像一种生物，鱼需要水，植物需要阳光，绝大部分动物都需要氧气，除了必备的生存条件之外还可以准备一些辅助的条件让生物更加满足，这些都可以称之为环境。这一部分主要是介绍搭建博客必要的环境，请准备好网络环境以及电脑。
+ git（必要，进行代码管理必不可少的工具） Github（必要，这篇教程主要就是借助github代码托管实现个人博客） Gitee码云 （Github的替位选择，推荐国内环境用户使用） Shell（Windows平台推荐WindowsTerminal）、 MarkDown编辑器（MarkDown是一种标记语言，写文章会用到） 善于思考的大脑和愿意付出行动的双手    Git的安装 Git简介 git是一个分布式版本控制软件，最初由林纳斯·托瓦兹创作，于2005年以GPL发布。最初目的是为更好地管理Linux内核开发而设计。应注意的是，这与GNU Interactive Tools不同。 git最初的开发动力来自于BitKeeper和Monotone。 维基百科
+上面这堆谜语来自wiki，举例说明吧。
+好比你装一台电脑，整个过程存在非常多的状态，甚至装完之后还需要升级维护之类的需求。如果中间出了问题就要拆掉已经装好的部分回到出错的状态重新来过，非常折磨！现在出现了这么一个工具，它可以记录下一个时空节点的所有信息，比如在你装好CPU，装好内存，装好显卡的每个结束时刻你都可以记录下这一时空节点，还可以带上一些你的辅助信息，说明为啥要记录这个节点以及在这个节点你都做了些什么。这样当你出现了什么问题的时候你可以快速的检查到底出啥问题了，甚至返回到之前的时空节点将其修复！是不是非常酷炫？这还不是最酷的，结合下文会讲到的Github，甚至可以做到让别人克隆你的时空节点记录，将他的时空记录和你的合并起来！真是令人激动。当然，Git的进一步使用就需要各位深入学习了，此处只是为了方便大家理解后面的命令都在做什么。
+Git的下载和安装 官网地址
+
+根据自己系统选择，推荐选择Setup安装程序，下面的是便携版，涉及到环境变量注册表这些，不推荐萌新使用，下载下来后双击运行。保持默认选项一冲到底即可！当然，你也可以选择网络上查询相关资料再做决定。
+安装完成过后你可以在任何一个地方鼠标右键看到这两个选项，这就代表安装完成了。
+有关Git的上手使用可以参考我的另一篇文章！
+  Github以及Gitee账号  Github简介 GitHub是通过Git进行版本控制的软件源代码托管服务平台，由GitHub公司的开发者Chris Wanstrath、P. J. Hyett和汤姆·普雷斯顿·沃纳使用Ruby on Rails编写而成。 GitHub同时提供付费账户和免费账户。这两种账户都可以创建公开或私有的代码仓库，但付费用户支持更多功能。 维基百科
+wiki对于完全没有基础的人确实有点麻哦，还是举例说明吧。
+比如你是一个画家，你非常喜欢在网络上分享自己的绘画作品，有一天你突然萌生了一个奇妙的想法，假如我可以发布我作品的源文件，让大家一起来完成作品会怎么样？于是你发布了作品的psd或者是其它可以编辑的文件到一个网络上的仓库中，并且告诉所有人可以随意编辑你这个仓库里的作品。现在，其他人就可以下载你的作品，在他们的电脑上完成了工作后再发布到你的作品仓库里，或者单纯下载下来欣赏使用，这是开源的体现。
+网络上建立仓库（存储空间）是需要消耗资源的，github提供给了用户一定的免费资源，大量用户之间则构建起了一个交流的社区，然后把这个例子中的绘画作品换成代码就可以简单理解github以及开源社区是什么了。
+ 注册gitee账号 国内网络环境比较推荐gitee，方便且速度快，中文环境便于学习使用。缺点就是考虑到国内政治因素以及各类安全需求有比较多的限制，也需要实名认证，当然这其实无可厚非，看各位如何取舍吧。
+访问码云注册
+请仔细阅读gitee给出的说明哦，个人空间取个好点的名字。注册完后登陆，然后按照网页的提示把手机号码绑定，还有实名认证，请准备好身份证的正反面各一张，还有一张手持身份证的照片（电脑上推荐大家平时就准备好这些证件照放在一个文件夹里，便于取用，在手机上访问网页的话也许可以直接拍照上传），实名认证需要大约1-2个工作日完成，完成过后才能启用gitee的页面托管服务。
+ 创建Gitee仓库 登录到你的个人首页，点击左下角的加号按钮
+
+
+这个仓库名最好和你注册时填写的个人空间名一样哦，这样的话你就可以直接通过这种形式http://darcklh.gitee.io/的域名访问你的个人博客，否则好像是还要加上一个2级域名，其它的保持默认选项即可，后面有变化也可以修改。注意到右上角的导入了吗，gitee可以直接同步github的仓库，要善于利用哦！
+ 注册github账号 访问这个链接github.com，来到github官网，找到右上角的Sign up按钮。
+接下来就是github的注册信息界面了，做的很漂亮，如果网络条件不好的话请多等待一下，或者挂上梯子再试试。这部分不予赘述，就是一个注册流程，也没啥限制的。
+完成注册后来到个人的首页。
+ 创建Github仓库 有了账号还需要仓库来存放你的博客，创建仓库也是非常简单的，但是注意个人博客类的仓库命名需要一定规范，这就是唯一需要注意的地方了。点击那个Repositories按钮，然后New'>
+<meta property='og:url' content='http://www.rmdarck18.xyz:1313/p/%E5%80%9F%E5%8A%A9github%E4%BB%A5%E5%8F%8Ahugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-0/'>
+<meta property='og:site_name' content='DarckLH的Blog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2021-08-13T20:38:35&#43;08:00'/><meta property='article:modified_time' content='2021-08-13T20:38:35&#43;08:00'/><meta property='og:image' content='http://www.rmdarck18.xyz:1313/p/%E5%80%9F%E5%8A%A9github%E4%BB%A5%E5%8F%8Ahugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-0/head.jpg' />
+<meta name="twitter:title" content="借助github以及hugo搭建静态的个人博客-0">
+<meta name="twitter:description" content="此篇文章在于帮助对网络知识非常陌生的用户快速部署起一个轻量级的个人页面，但是因为这种事情多少涉及到一些技术层面的东西，很难说能够畅通无阻的就构建起自己的博客，只能说有问题多思考加留言吧。。
+第一篇主要是讲一些环境准备和需要的软件。
+环境准备 在正式开始上手前，我们需要做一些环境准备，何谓“环境&amp;quot;？
+程序其实就像一种生物，鱼需要水，植物需要阳光，绝大部分动物都需要氧气，除了必备的生存条件之外还可以准备一些辅助的条件让生物更加满足，这些都可以称之为环境。这一部分主要是介绍搭建博客必要的环境，请准备好网络环境以及电脑。
+ git（必要，进行代码管理必不可少的工具） Github（必要，这篇教程主要就是借助github代码托管实现个人博客） Gitee码云 （Github的替位选择，推荐国内环境用户使用） Shell（Windows平台推荐WindowsTerminal）、 MarkDown编辑器（MarkDown是一种标记语言，写文章会用到） 善于思考的大脑和愿意付出行动的双手    Git的安装 Git简介 git是一个分布式版本控制软件，最初由林纳斯·托瓦兹创作，于2005年以GPL发布。最初目的是为更好地管理Linux内核开发而设计。应注意的是，这与GNU Interactive Tools不同。 git最初的开发动力来自于BitKeeper和Monotone。 维基百科
+上面这堆谜语来自wiki，举例说明吧。
+好比你装一台电脑，整个过程存在非常多的状态，甚至装完之后还需要升级维护之类的需求。如果中间出了问题就要拆掉已经装好的部分回到出错的状态重新来过，非常折磨！现在出现了这么一个工具，它可以记录下一个时空节点的所有信息，比如在你装好CPU，装好内存，装好显卡的每个结束时刻你都可以记录下这一时空节点，还可以带上一些你的辅助信息，说明为啥要记录这个节点以及在这个节点你都做了些什么。这样当你出现了什么问题的时候你可以快速的检查到底出啥问题了，甚至返回到之前的时空节点将其修复！是不是非常酷炫？这还不是最酷的，结合下文会讲到的Github，甚至可以做到让别人克隆你的时空节点记录，将他的时空记录和你的合并起来！真是令人激动。当然，Git的进一步使用就需要各位深入学习了，此处只是为了方便大家理解后面的命令都在做什么。
+Git的下载和安装 官网地址
+
+根据自己系统选择，推荐选择Setup安装程序，下面的是便携版，涉及到环境变量注册表这些，不推荐萌新使用，下载下来后双击运行。保持默认选项一冲到底即可！当然，你也可以选择网络上查询相关资料再做决定。
+安装完成过后你可以在任何一个地方鼠标右键看到这两个选项，这就代表安装完成了。
+有关Git的上手使用可以参考我的另一篇文章！
+  Github以及Gitee账号  Github简介 GitHub是通过Git进行版本控制的软件源代码托管服务平台，由GitHub公司的开发者Chris Wanstrath、P. J. Hyett和汤姆·普雷斯顿·沃纳使用Ruby on Rails编写而成。 GitHub同时提供付费账户和免费账户。这两种账户都可以创建公开或私有的代码仓库，但付费用户支持更多功能。 维基百科
+wiki对于完全没有基础的人确实有点麻哦，还是举例说明吧。
+比如你是一个画家，你非常喜欢在网络上分享自己的绘画作品，有一天你突然萌生了一个奇妙的想法，假如我可以发布我作品的源文件，让大家一起来完成作品会怎么样？于是你发布了作品的psd或者是其它可以编辑的文件到一个网络上的仓库中，并且告诉所有人可以随意编辑你这个仓库里的作品。现在，其他人就可以下载你的作品，在他们的电脑上完成了工作后再发布到你的作品仓库里，或者单纯下载下来欣赏使用，这是开源的体现。
+网络上建立仓库（存储空间）是需要消耗资源的，github提供给了用户一定的免费资源，大量用户之间则构建起了一个交流的社区，然后把这个例子中的绘画作品换成代码就可以简单理解github以及开源社区是什么了。
+ 注册gitee账号 国内网络环境比较推荐gitee，方便且速度快，中文环境便于学习使用。缺点就是考虑到国内政治因素以及各类安全需求有比较多的限制，也需要实名认证，当然这其实无可厚非，看各位如何取舍吧。
+访问码云注册
+请仔细阅读gitee给出的说明哦，个人空间取个好点的名字。注册完后登陆，然后按照网页的提示把手机号码绑定，还有实名认证，请准备好身份证的正反面各一张，还有一张手持身份证的照片（电脑上推荐大家平时就准备好这些证件照放在一个文件夹里，便于取用，在手机上访问网页的话也许可以直接拍照上传），实名认证需要大约1-2个工作日完成，完成过后才能启用gitee的页面托管服务。
+ 创建Gitee仓库 登录到你的个人首页，点击左下角的加号按钮
+
+
+这个仓库名最好和你注册时填写的个人空间名一样哦，这样的话你就可以直接通过这种形式http://darcklh.gitee.io/的域名访问你的个人博客，否则好像是还要加上一个2级域名，其它的保持默认选项即可，后面有变化也可以修改。注意到右上角的导入了吗，gitee可以直接同步github的仓库，要善于利用哦！
+ 注册github账号 访问这个链接github.com，来到github官网，找到右上角的Sign up按钮。
+接下来就是github的注册信息界面了，做的很漂亮，如果网络条件不好的话请多等待一下，或者挂上梯子再试试。这部分不予赘述，就是一个注册流程，也没啥限制的。
+完成注册后来到个人的首页。
+ 创建Github仓库 有了账号还需要仓库来存放你的博客，创建仓库也是非常简单的，但是注意个人博客类的仓库命名需要一定规范，这就是唯一需要注意的地方了。点击那个Repositories按钮，然后New"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='http://www.rmdarck18.xyz:1313/p/%E5%80%9F%E5%8A%A9github%E4%BB%A5%E5%8F%8Ahugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-0/head.jpg' />
+    <link rel="shortcut icon" href="img/avatar.png" />
+
+    </head>
+    <body class="
+    article-page has-toc
+">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex 
+    
+        extended
+    
+">
+    
+        <div id="article-toolbar">
+            <a href="http://www.rmdarck18.xyz:1313" class="back-home">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="15 6 9 12 15 18" />
+</svg>
+
+
+
+                <span>返回</span>
+            </a>
+        </div>
+    
+<main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/%E5%80%9F%E5%8A%A9github%E4%BB%A5%E5%8F%8Ahugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-0/">
+                <img src="/p/%E5%80%9F%E5%8A%A9github%E4%BB%A5%E5%8F%8Ahugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-0/head_hu0d41abcf2798df58867175abdd80ed1c_1163462_800x0_resize_q75_box.jpg"
+                        srcset="/p/%E5%80%9F%E5%8A%A9github%E4%BB%A5%E5%8F%8Ahugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-0/head_hu0d41abcf2798df58867175abdd80ed1c_1163462_800x0_resize_q75_box.jpg 800w, /p/%E5%80%9F%E5%8A%A9github%E4%BB%A5%E5%8F%8Ahugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-0/head_hu0d41abcf2798df58867175abdd80ed1c_1163462_1600x0_resize_q75_box.jpg 1600w"
+                        width="800" 
+                        height="450" 
+                        loading="lazy"
+                        alt="Featured image of post 借助github以及hugo搭建静态的个人博客-0" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E6%95%99%E7%A8%8B%E5%88%86%E4%BA%AB/" style="background-color: #2a9d8f; color: #fff;">
+                教程分享
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/p/%E5%80%9F%E5%8A%A9github%E4%BB%A5%E5%8F%8Ahugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-0/">借助github以及hugo搭建静态的个人博客-0</a>
+    </h2>
+
+    
+
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Aug 13, 2021</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 1 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+</div>
+</header>
+
+    <section class="article-content">
+    <p>此篇文章在于帮助对网络知识非常陌生的用户快速部署起一个轻量级的个人页面，但是因为这种事情多少涉及到一些技术层面的东西，很难说能够畅通无阻的就构建起自己的博客，只能说有问题多思考加留言吧。。</p>
+<p>第一篇主要是讲一些环境准备和需要的软件。</p>
+<h2 id="环境准备">环境准备</h2>
+<p>在正式开始上手前，我们需要做一些环境准备，何谓“环境&quot;？</p>
+<p>程序其实就像一种生物，鱼需要水，植物需要阳光，绝大部分动物都需要氧气，除了必备的生存条件之外还可以准备一些辅助的条件让生物更加满足，这些都可以称之为环境。这一部分主要是介绍搭建博客必要的环境，请准备好网络环境以及电脑。</p>
+<ol>
+<li>git（必要，进行代码管理必不可少的工具）</li>
+<li>Github（必要，这篇教程主要就是借助github代码托管实现个人博客）</li>
+<li>Gitee码云 （Github的替位选择，推荐国内环境用户使用）</li>
+<li>Shell（Windows平台推荐WindowsTerminal）、</li>
+<li>MarkDown编辑器（MarkDown是一种标记语言，写文章会用到）</li>
+<li>善于思考的大脑和愿意付出行动的双手</li>
+</ol>
+<hr>
+<hr>
+<h3 id="git的安装">Git的安装</h3>
+<h4 id="git简介">Git简介</h4>
+<p><img src="https://pic2.zhimg.com/v2-c009d68e78c98159574cfa243d716b57_720w.jpg?source=172ae18b" alt=""  /></p>
+<p>git是一个分布式版本控制软件，最初由林纳斯·托瓦兹创作，于2005年以GPL发布。最初目的是为更好地管理Linux内核开发而设计。应注意的是，这与GNU Interactive Tools不同。 git最初的开发动力来自于BitKeeper和Monotone。 <a class="link" href="https://zh.wikipedia.org/zh-cn/Git"  target="_blank" rel="noopener"
+    >维基百科</a></p>
+<p>上面这堆谜语来自wiki，举例说明吧。</p>
+<p>好比你装一台电脑，整个过程存在非常多的状态，甚至装完之后还需要升级维护之类的需求。如果中间出了问题就要拆掉已经装好的部分回到出错的状态重新来过，非常折磨！现在出现了这么一个工具，它可以记录下一个时空节点的所有信息，比如在你装好CPU，装好内存，装好显卡的每个结束时刻你都可以记录下这一时空节点，还可以带上一些你的辅助信息，说明为啥要记录这个节点以及在这个节点你都做了些什么。这样当你出现了什么问题的时候你可以快速的检查到底出啥问题了，甚至返回到之前的时空节点将其修复！是不是非常酷炫？这还不是最酷的，结合下文会讲到的Github，甚至可以做到让别人克隆你的时空节点记录，将他的时空记录和你的合并起来！真是令人激动。当然，Git的进一步使用就需要各位深入学习了，此处只是为了方便大家理解后面的命令都在做什么。</p>
+<h4 id="git的下载和安装">Git的下载和安装</h4>
+<p><a class="link" href="https://git-scm.com/"  target="_blank" rel="noopener"
+    >官网地址</a></p>
+<p><img src="https://z3.ax1x.com/2021/08/13/fsMJLq.png" alt="选择下载"  /></p>
+<p><a class="link" href="https://imgtu.com/i/fsQWBq"  target="_blank" rel="noopener"
+    ><img src="https://z3.ax1x.com/2021/08/13/fsQWBq.png" alt="fsQWBq.png"  /></a></p>
+<p>根据自己系统选择，推荐选择Setup安装程序，下面的是便携版，涉及到环境变量注册表这些，不推荐萌新使用，下载下来后双击运行。保持默认选项一冲到底即可！当然，你也可以选择网络上查询相关资料再做决定。</p>
+<p>安装完成过后你可以在任何一个地方鼠标右键看到这两个选项，这就代表安装完成了。</p>
+<p><img src="https://z3.ax1x.com/2021/08/13/fslNPU.png" alt=""  /></p>
+<p>有关Git的上手使用可以参考我的另一篇文章！</p>
+<hr>
+<hr>
+<h3 id="github以及gitee账号">Github以及Gitee账号</h3>
+<hr>
+<h4 id="github简介">Github简介</h4>
+<p>GitHub是通过Git进行版本控制的软件源代码托管服务平台，由GitHub公司的开发者Chris Wanstrath、P. J. Hyett和汤姆·普雷斯顿·沃纳使用Ruby on Rails编写而成。 GitHub同时提供付费账户和免费账户。这两种账户都可以创建公开或私有的代码仓库，但付费用户支持更多功能。 <a class="link" href="https://zh.wikipedia.org/zh-cn/GitHub"  target="_blank" rel="noopener"
+    >维基百科</a></p>
+<p>wiki对于完全没有基础的人确实有点麻哦，还是举例说明吧。</p>
+<p>比如你是一个画家，你非常喜欢在网络上分享自己的绘画作品，有一天你突然萌生了一个奇妙的想法，假如我可以发布我作品的源文件，让大家一起来完成作品会怎么样？于是你发布了作品的psd或者是其它可以编辑的文件到一个网络上的仓库中，并且告诉所有人可以随意编辑你这个仓库里的作品。现在，其他人就可以下载你的作品，在他们的电脑上完成了工作后再发布到你的作品仓库里，或者单纯下载下来欣赏使用，这是开源的体现。</p>
+<p>网络上建立仓库（存储空间）是需要消耗资源的，github提供给了用户一定的免费资源，大量用户之间则构建起了一个交流的社区，然后把这个例子中的绘画作品换成代码就可以简单理解github以及开源社区是什么了。</p>
+<hr>
+<h4 id="注册gitee账号">注册gitee账号</h4>
+<p>国内网络环境比较推荐gitee，方便且速度快，中文环境便于学习使用。缺点就是考虑到国内政治因素以及各类安全需求有比较多的限制，也需要实名认证，当然这其实无可厚非，看各位如何取舍吧。</p>
+<p>访问<a class="link" href="https://gitee.com/"  target="_blank" rel="noopener"
+    >码云</a>注册<figure style="flex-grow: 140; flex-basis: 337px">
+		<a href="/p/%E5%80%9F%E5%8A%A9github%E4%BB%A5%E5%8F%8Ahugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-0/image-20210816000803822.png" data-size="998x710"><img src="/p/%E5%80%9F%E5%8A%A9github%E4%BB%A5%E5%8F%8Ahugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-0/image-20210816000803822.png"
+				srcset="/p/%E5%80%9F%E5%8A%A9github%E4%BB%A5%E5%8F%8Ahugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-0/image-20210816000803822_hufc7cc0ea94da41d32bc42756d8b528f0_167326_480x0_resize_box_3.png 480w, /p/%E5%80%9F%E5%8A%A9github%E4%BB%A5%E5%8F%8Ahugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-0/image-20210816000803822_hufc7cc0ea94da41d32bc42756d8b528f0_167326_1024x0_resize_box_3.png 1024w"
+				width="998"
+				height="710"
+				loading="lazy"
+				>
+		</a>
+		
+	</figure></p>
+<p>请仔细阅读gitee给出的说明哦，个人空间取个好点的名字。注册完后登陆，然后按照网页的提示把手机号码绑定，还有实名认证，请准备好身份证的正反面各一张，还有一张手持身份证的照片（电脑上推荐大家平时就准备好这些证件照放在一个文件夹里，便于取用，在手机上访问网页的话也许可以直接拍照上传），实名认证需要大约1-2个工作日完成，完成过后才能启用gitee的页面托管服务。</p>
+<hr>
+<h4 id="创建gitee仓库">创建Gitee仓库</h4>
+<p>登录到你的个人首页，点击左下角的加号按钮</p>
+<p><figure style="flex-grow: 177; flex-basis: 426px">
+		<a href="/p/%E5%80%9F%E5%8A%A9github%E4%BB%A5%E5%8F%8Ahugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-0/image-20210816001713660.png" data-size="1288x725"><img src="/p/%E5%80%9F%E5%8A%A9github%E4%BB%A5%E5%8F%8Ahugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-0/image-20210816001713660.png"
+				srcset="/p/%E5%80%9F%E5%8A%A9github%E4%BB%A5%E5%8F%8Ahugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-0/image-20210816001713660_hu17aa59f46fc79e9ff850bb5d81cb9a70_163857_480x0_resize_box_3.png 480w, /p/%E5%80%9F%E5%8A%A9github%E4%BB%A5%E5%8F%8Ahugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-0/image-20210816001713660_hu17aa59f46fc79e9ff850bb5d81cb9a70_163857_1024x0_resize_box_3.png 1024w"
+				width="1288"
+				height="725"
+				loading="lazy"
+				>
+		</a>
+		
+	</figure></p>
+<p><figure style="flex-grow: 127; flex-basis: 305px">
+		<a href="/p/%E5%80%9F%E5%8A%A9github%E4%BB%A5%E5%8F%8Ahugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-0/image-20210816002329592.png" data-size="909x715"><img src="/p/%E5%80%9F%E5%8A%A9github%E4%BB%A5%E5%8F%8Ahugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-0/image-20210816002329592.png"
+				srcset="/p/%E5%80%9F%E5%8A%A9github%E4%BB%A5%E5%8F%8Ahugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-0/image-20210816002329592_huf539beca69c2aba631a11ca5a4ac3ddb_47414_480x0_resize_box_3.png 480w, /p/%E5%80%9F%E5%8A%A9github%E4%BB%A5%E5%8F%8Ahugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-0/image-20210816002329592_huf539beca69c2aba631a11ca5a4ac3ddb_47414_1024x0_resize_box_3.png 1024w"
+				width="909"
+				height="715"
+				loading="lazy"
+				>
+		</a>
+		
+	</figure></p>
+<p>这个仓库名最好和你注册时填写的个人空间名一样哦，这样的话你就可以直接通过这种形式http://darcklh.gitee.io/的域名访问你的个人博客，否则好像是还要加上一个2级域名，其它的保持默认选项即可，后面有变化也可以修改。注意到右上角的导入了吗，gitee可以直接同步github的仓库，要善于利用哦！</p>
+<hr>
+<h4 id="注册github账号">注册github账号</h4>
+<p>访问这个链接github.com，来到github官网，找到右上角的Sign up按钮。</p>
+<p><img src="https://z3.ax1x.com/2021/08/13/fsEiTJ.png" alt="image-20210813205913353"  /></p>
+<p>接下来就是github的注册信息界面了，做的很漂亮，如果网络条件不好的话请多等待一下，或者挂上梯子再试试。这部分不予赘述，就是一个注册流程，也没啥限制的。</p>
+<p>完成注册后来到个人的首页。</p>
+<p><img src="https://z3.ax1x.com/2021/08/13/fseY11.png" alt=""  /></p>
+<hr>
+<h4 id="创建github仓库">创建Github仓库</h4>
+<p>有了账号还需要仓库来存放你的博客，创建仓库也是非常简单的，但是注意个人博客类的仓库命名需要一定规范，这就是唯一需要注意的地方了。点击那个Repositories按钮，然后New</p>
+<p><img src="https://z3.ax1x.com/2021/08/13/fs3e1g.md.png" alt="fs3e1g.md.png"  /></p>
+<p><a class="link" href="https://imgtu.com/i/fs3au9"  target="_blank" rel="noopener"
+    ><img src="https://z3.ax1x.com/2021/08/13/fs3au9.md.png" alt="fs3au9.md.png"  /></a></p>
+<p>命名规范就是，仓库名一定是你的用户名加上.github.io，这是GitHub解析用户界面的强制要求。其它选项保持默认就可以了，不用管。我这里报红是因为我已经有这个仓库了，各位应该不会有啥问题，建好仓库后先把它撂在这不管，还有一些准备工作要做。</p>
+<hr>
+<hr>
+<h3 id="shell的准备">Shell的准备</h3>
+<h4 id="shell的介绍">Shell的介绍</h4>
+<p>什么是Shell呢？计算机在早期的时候是没有这么多花花绿绿的界面让你来用的，所有的操作都是通过shell（终端）来完成的，比如复制一个文件到另一个目录这样简单的操作，就需要在一个黑黑的窗体里完成，各位也许在Windows里接触过这个黑窗体，没错，CMD其实也是一个Shell（终端）。</p>
+<p>那你可能会问，为啥不做一个界面出来呢，不是会方便很多吗？首先是图形化的界面消耗的资源比较高，在服务器上大家早就习惯了一套命令式的交互，没有必要去做一套费力又不咋讨好的图形界面，所以很多软件都是没有图形化界面的，包括系统也是，Linux这类服务器系统大部分都没有做图形化界面的，当然你可以自己安装图形界面。再者就是对于熟练的程序员来说使用命令交互比图形界面快多了，等待图形界面加载的时候就已经使用节约数十倍的资源占用的终端完成操作了。</p>
+<hr>
+<h4 id="为什么要安装windowsterminal">为什么要安装WindowsTerminal</h4>
+<p>Windows的CMD不够用，丑（</p>
+<hr>
+<h4 id="下载以及安装">下载以及安装</h4>
+<p>有两种方式，最简单的，在开始菜单里打开你的Windows应用商店，搜索WindowsTerminal安装即可</p>
+<p><a class="link" href="https://imgtu.com/i/fsJEh6"  target="_blank" rel="noopener"
+    ><img src="https://z3.ax1x.com/2021/08/13/fsJEh6.png" alt="fsJEh6.png"  /></a></p>
+<p><img src="https://z3.ax1x.com/2021/08/13/fsJI4x.md.png" alt="fsJI4x.md.png"  /></p>
+<p>或者你可以来到这个仓库的发行地址<a class="link" href="https://github.com/microsoft/terminal/releases/tag/v1.9.1942.0"  target="_blank" rel="noopener"
+    >下载WindowsTerminal</a>，翻到页面底部，下载第一个文件，下载下来直接双击即可，这个我记得是UWP应用形式的。</p>
+<p><a class="link" href="https://imgtu.com/i/fsY7on"  target="_blank" rel="noopener"
+    ><img src="https://z3.ax1x.com/2021/08/13/fsY7on.md.png" alt="fsY7on.md.png"  /></a></p>
+<p>完成安装过后可以按下<!-- raw HTML omitted -->Win<!-- raw HTML omitted -->+<!-- raw HTML omitted -->R<!-- raw HTML omitted -->打开运行窗口，输入wt回车即可打开Shell</p>
+<p><a class="link" href="https://imgtu.com/i/fstft1"  target="_blank" rel="noopener"
+    ><img src="https://z3.ax1x.com/2021/08/13/fstft1.png" alt="fstft1.png"  /></a></p>
+<p><a class="link" href="https://imgtu.com/i/fstz1f"  target="_blank" rel="noopener"
+    ><img src="https://z3.ax1x.com/2021/08/13/fstz1f.md.png" alt="fstz1f.md.png"  /></a></p>
+<p>也可以通过点击右键菜单里的WindowsTerminal选项在右键所点击的目录打开Shell</p>
+<hr>
+<hr>
+<h3 id="markdown编辑器的准备">MarkDown编辑器的准备</h3>
+<h4 id="markdown的介绍">MarkDown的介绍</h4>
+<p>在解释MarkDown之前我们需要先了解一下HTML是什么，了解互联网技术的可以跳过，这部分给初次接触的各位介绍一下。</p>
+<p>HTML（Hyper Text Markup Language），中文叫超文本标记语言，各位回想一下平时上网浏览各类网页的时候，包括这篇文章，上面是如何展示出来各式各样的内容的，有字体样式不同的文本，有各种图片穿插其中，甚至还有一些视频和动态内容。这就是所谓的”超文本”，可以理解成加强型文本，已经不是简单的文本形式了，里面还添加了其它的多媒体元素。</p>
+<p>如何在一篇文本中添加那些元素呢？我们可以通过标记的形式，比如说以一些特定的文本串标定某一段的字体大小，颜色，或者标定某一段文本串代表一张图片。这就是所谓的“标记语言”。</p>
+<p><figure style="flex-grow: 396; flex-basis: 951px">
+		<a href="/p/%E5%80%9F%E5%8A%A9github%E4%BB%A5%E5%8F%8Ahugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-0/image-20210816005622212.png" data-size="1268x320"><img src="/p/%E5%80%9F%E5%8A%A9github%E4%BB%A5%E5%8F%8Ahugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-0/image-20210816005622212.png"
+				srcset="/p/%E5%80%9F%E5%8A%A9github%E4%BB%A5%E5%8F%8Ahugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-0/image-20210816005622212_hu0101a654944f11c781dcfbbaf5a5c96c_157887_480x0_resize_box_3.png 480w, /p/%E5%80%9F%E5%8A%A9github%E4%BB%A5%E5%8F%8Ahugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-0/image-20210816005622212_hu0101a654944f11c781dcfbbaf5a5c96c_157887_1024x0_resize_box_3.png 1024w"
+				width="1268"
+				height="320"
+				loading="lazy"
+				alt="左边是浏览器画面 右边是超文本标记语言 h3代表三级标题">
+		</a>
+		
+		<figcaption>左边是浏览器画面 右边是超文本标记语言 h3代表三级标题</figcaption>
+		
+	</figure></p>
+<p>好，现在我们知道了HTML是什么，那只要再去了解一下标记语言的语法就可以写出漂亮的文章了是吧，非也！现在有个问题，我们新建一个文本文件，就是那个文件后缀是TXT的东西，在里面写上这些东西，然后保存。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">h1</span> <span class="na">style</span><span class="o">=</span><span class="s">&#34;color: red&#34;</span><span class="p">&gt;</span>Hello HTML!<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>上面的内容是不是变红了？<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</code></pre></div><p>诶？没变化是吧，聪明的各位也许想到了，只要把这个文件拖到浏览器里就能够打开并且看到效果！其实文件的后缀名对文件除了文件信息以外的内容没有什么影响，后缀名会影响系统选择以什么程序来打开这个文件。也就是说，以HTML作为后缀名的文件，系统会让你安装的并且设为默认浏览器的程序来加载它，浏览器处理文件二进制流并且将它渲染成大家所熟知的页面形式。</p>
+<p>也就是说，标记语言除了本身编写的时候需要符合一定规则以外，还需要专门的程序来解析显示它。</p>
+<p>好，话该说回来了，MarkDown也是一种标记语言，它的文件后缀名是md，它虽然没有HTML那么多强大的功能，不过比起原生的文本形式强大太多，而且主要是用来写文章的，相比于HTML更加优雅，不管是平时写笔记还是什么的都非常推荐使用！</p>
+<h4 id="下载安装typora">下载安装Typora</h4>
+<p>Typora是一款用来解析MarkDown语言的软件，网络上有非常多的软件可以选择，各位可以自行搜索下载，不过我试了Typora之后感觉是爱不释手啊！软件功能足够方便，界面非常漂亮干净，软件和官网都透露着一种性冷淡的文艺的气息。<a class="link" href="https://typora.io/"  target="_blank" rel="noopener"
+    >Typora官网</a></p>
+<p><figure style="flex-grow: 176; flex-basis: 424px">
+		<a href="/p/%E5%80%9F%E5%8A%A9github%E4%BB%A5%E5%8F%8Ahugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-0/image-20210816013535620.png" data-size="1366x773"><img src="/p/%E5%80%9F%E5%8A%A9github%E4%BB%A5%E5%8F%8Ahugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-0/image-20210816013535620.png"
+				srcset="/p/%E5%80%9F%E5%8A%A9github%E4%BB%A5%E5%8F%8Ahugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-0/image-20210816013535620_hu5836069c3414dd4601e932af5a0c6c08_38122_480x0_resize_box_3.png 480w, /p/%E5%80%9F%E5%8A%A9github%E4%BB%A5%E5%8F%8Ahugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-0/image-20210816013535620_hu5836069c3414dd4601e932af5a0c6c08_38122_1024x0_resize_box_3.png 1024w"
+				width="1366"
+				height="773"
+				loading="lazy"
+				alt="官网下载页">
+		</a>
+		
+		<figcaption>官网下载页</figcaption>
+		
+	</figure></p>
+<p>打开官网来到页面底部，或者点击右上角的Download跳过来，选择自己的系统（Windows），然后在下一个页面选择64位或者是32位下载，之后就是运行安装程序即可啦！</p>
+<p><figure style="flex-grow: 110; flex-basis: 264px">
+		<a href="/p/%E5%80%9F%E5%8A%A9github%E4%BB%A5%E5%8F%8Ahugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-0/image-20210816013031895.png" data-size="1130x1025"><img src="/p/%E5%80%9F%E5%8A%A9github%E4%BB%A5%E5%8F%8Ahugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-0/image-20210816013031895.png"
+				srcset="/p/%E5%80%9F%E5%8A%A9github%E4%BB%A5%E5%8F%8Ahugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-0/image-20210816013031895_hued6e94ae4f9f0e0fed7e15ef0d51e1c2_267894_480x0_resize_box_3.png 480w, /p/%E5%80%9F%E5%8A%A9github%E4%BB%A5%E5%8F%8Ahugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-0/image-20210816013031895_hued6e94ae4f9f0e0fed7e15ef0d51e1c2_267894_1024x0_resize_box_3.png 1024w"
+				width="1130"
+				height="1025"
+				loading="lazy"
+				alt="Typora写作中">
+		</a>
+		
+		<figcaption>Typora写作中</figcaption>
+		
+	</figure></p>
+<hr>
+<hr>
+<h2 id="总结">总结</h2>
+<p>第一篇的内容其实很简单，跟着走就完事了，写的可能有点啰里啰嗦的。</p>
+<p>因为我自己是从一点都不懂的程度慢慢学过来的，所以我非常理解想要接触这个领域的萌新入门时会遇到很多特别基础的问题，但是由于知识体系是零散的，萌新很难自己构建起来一套理解网络基础的体系，来解决这些基础的问题。</p>
+<p>所以我花大量篇幅尽量介绍清楚整个体系是怎么一回事，一方面是我自己加强理解和复习，另外一方面就是帮助各位萌新从这个搭建博客的流程中窥探学习到网络技术的一些基础知识。</p>
+<p>如果说整个流程都只是叙述做什么，怎么做，却没有说明为什么，那其实这系列文章就是我自己写出来爽罢了，没啥实际意义。</p>
+<p>要是能帮到各位就太好了！</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    <aside class="related-contents--wrapper">
+    
+    
+        <h2 class="section-title">相关文章</h2>
+        <div class="related-contents">
+            <div class="flex article-list--tile">
+                
+                    
+<article class="has-image">
+    <a href="/p/%E5%80%9F%E5%8A%A9github%E4%BB%A5%E5%8F%8Ahugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-1/">
+        
+        
+            <div class="article-image">
+                <img src="/p/%E5%80%9F%E5%8A%A9github%E4%BB%A5%E5%8F%8Ahugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-1/img1.b5397247e925a0b4ec79e0a03512e3bc_hu1883fd1680917f568a2e51295147733c_936413_250x150_fill_box_smart1_3.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy" 
+                        data-key="" 
+                        data-hash="md5-tTlyR&#43;kloLTseeCgNRLjvA==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">借助github以及hugo搭建静态的个人博客-1</h2>
+        </div>
+    </a>
+</article>
+                
+            </div>
+        </div>
+    
+</aside>
+
+     
+     
+        
+    <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+    
+    
+    
+    
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'darckrm-github-io';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
+
+<script>
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (DISQUS) {
+            DISQUS.reset({
+                reload: true
+            });
+        }
+    })
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2021 DarckLH的Blog
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.0.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css"integrity="sha256-c0uckgykQ9v5k&#43;IqViZOZKc47Jn7KQil4/MP3ySA3F8="crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
+            >
+
+            </main>
+    
+        <aside class="sidebar right-sidebar sticky">
+            <section class="widget archives">
+                <div class="widget-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+                </div>
+                <h2 class="widget-title section-title">目录</h2>
+                
+                <div class="widget--toc">
+                    <nav id="TableOfContents">
+  <ol>
+    <li><a href="#环境准备">环境准备</a>
+      <ol>
+        <li><a href="#git的安装">Git的安装</a>
+          <ol>
+            <li><a href="#git简介">Git简介</a></li>
+            <li><a href="#git的下载和安装">Git的下载和安装</a></li>
+          </ol>
+        </li>
+        <li><a href="#github以及gitee账号">Github以及Gitee账号</a>
+          <ol>
+            <li><a href="#github简介">Github简介</a></li>
+            <li><a href="#注册gitee账号">注册gitee账号</a></li>
+            <li><a href="#创建gitee仓库">创建Gitee仓库</a></li>
+            <li><a href="#注册github账号">注册github账号</a></li>
+            <li><a href="#创建github仓库">创建Github仓库</a></li>
+          </ol>
+        </li>
+        <li><a href="#shell的准备">Shell的准备</a>
+          <ol>
+            <li><a href="#shell的介绍">Shell的介绍</a></li>
+            <li><a href="#为什么要安装windowsterminal">为什么要安装WindowsTerminal</a></li>
+            <li><a href="#下载以及安装">下载以及安装</a></li>
+          </ol>
+        </li>
+        <li><a href="#markdown编辑器的准备">MarkDown编辑器的准备</a>
+          <ol>
+            <li><a href="#markdown的介绍">MarkDown的介绍</a></li>
+            <li><a href="#下载安装typora">下载安装Typora</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#总结">总结</a></li>
+  </ol>
+</nav>
+                </div>
+            </section>
+        </aside>
+    
+
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
+                defer="false"
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
